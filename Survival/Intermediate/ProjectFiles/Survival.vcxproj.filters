@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Survival.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{E45C682A-6037-4F44-B288-65DE59639C31}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Survival.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SurvivalEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{77681F96-EB75-4A27-ACC7-9C3B65FAA899}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Survival">
+      <UniqueIdentifier>{C5965890-2991-4D87-AE09-68F56A1C0AE1}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Survival\Survival.Build.cs">
+      <Filter>Source\Survival</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Survival\Survival.cpp">
+      <Filter>Source\Survival</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Survival\Survival.h">
+      <Filter>Source\Survival</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Survival\SurvivalCharacter.cpp">
+      <Filter>Source\Survival</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Survival\SurvivalCharacter.h">
+      <Filter>Source\Survival</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Survival\SurvivalGameMode.cpp">
+      <Filter>Source\Survival</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Survival\SurvivalGameMode.h">
+      <Filter>Source\Survival</Filter>
+    </ClInclude>
+    <Filter Include="Source\Survival\Resources">
+      <UniqueIdentifier>{40A741E0-3CDF-4AE2-A2ED-CFE068BACB90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\Resources\Windows">
+      <UniqueIdentifier>{630707B1-2D9A-4D33-AE23-24A34A061641}</UniqueIdentifier>
+    </Filter>
+    <ResourceCompile Include="..\..\Source\Survival\Resources\Windows\Survival.rc">
+      <Filter>Source\Survival\Resources\Windows</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Survival\Trap.h">
+      <Filter>Source\Survival</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Survival\Trap.cpp">
+      <Filter>Source\Survival</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
