@@ -12,11 +12,30 @@
 #endif
 #define SURVIVAL_Trap_generated_h
 
+class AActor;
 #define ATrap_EVENTPARMS
-#define ATrap_RPC_WRAPPERS
+#define ATrap_RPC_WRAPPERS \
+ \
+ \
+	DECLARE_FUNCTION(execOnOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->OnOverlap(OtherActor); \
+	}
+
+
 #define ATrap_RPC_WRAPPERS_NO_PURE_DECLS \
 	static inline void StaticChecks_Implementation_Validate() \
 	{ \
+	} \
+ \
+ \
+	DECLARE_FUNCTION(execOnOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->OnOverlap(OtherActor); \
 	}
 
 

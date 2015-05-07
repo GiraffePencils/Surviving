@@ -5,14 +5,20 @@
 #include "GameFramework/Actor.h"
 #include "Trap.generated.h"
 
+//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorBeginOverlapSignature, class AActor*, OtherActor);
+
 UCLASS()
 class SURVIVAL_API ATrap : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ATrap();
+
+
+	UPROPERTY()
+		USceneComponent* OurVisibleComponent;
 
 	//Create the the containers for the base trap class
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
@@ -21,21 +27,16 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
 		float trapRadius;
 
-	UPROPERTY(EditAnywhere, Category = "Trap Properties")
-		float damage;
+	//Function to be called on overlap
+	UFUNCTION()
+		void OnOverlap(AActor* OtherActor);
 
-	UPROPERTY(EditAnywhere, Category = "Trap Properties")
-		bool doesSnare;
+		// Called when the game starts or when spawned
+		virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, Category = "Trap Properties")
-		int32 alertLevel;
-
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	
 	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
+	virtual void Tick(float DeltaSeconds) override;
 
-	
-	
+
+
 };
