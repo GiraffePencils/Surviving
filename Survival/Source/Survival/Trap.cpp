@@ -49,6 +49,7 @@ void ATrap::Tick(float DeltaTime)
 //Do something with the other actor.
 void ATrap::OnOverlap(AActor* OtherActor)
 {
-
+	if (OtherActor)
+	isActive = false;
 
 }

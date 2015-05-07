@@ -20,6 +20,9 @@ public:
 	UPROPERTY()
 		USceneComponent* OurVisibleComponent;
 
+	UPROPERTY()
+		UMaterial* trapColour;
+
 	//Create the the containers for the base trap class
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
 		bool isActive;
