@@ -19,6 +19,8 @@ public:
 
 	UPROPERTY()
 		USceneComponent* OurVisibleComponent;
+	UPROPERTY()
+		USceneComponent* OurRootComponent;
 
 	UPROPERTY()
 		UMaterial* trapColour;
