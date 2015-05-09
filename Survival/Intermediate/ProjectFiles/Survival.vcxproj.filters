@@ -67,15 +67,9 @@
     <ClInclude Include="..\..\Source\Survival\Trap.h">
       <Filter>Source\Survival</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\InventoryManager.h">
-      <Filter>Source\Survival</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Survival\Trap.cpp">
-      <Filter>Source\Survival</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\InventoryManager.cpp">
       <Filter>Source\Survival</Filter>
     </ClCompile>
   </ItemGroup>

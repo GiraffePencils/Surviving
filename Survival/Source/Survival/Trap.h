@@ -5,7 +5,6 @@
 #include "GameFramework/Actor.h"
 #include "Trap.generated.h"
 
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorBeginOverlapSignature, class AActor*, OtherActor);
 
 UCLASS()
 class SURVIVAL_API ATrap : public AActor
@@ -24,8 +23,11 @@ public:
 		UMaterial* trapColour;
 
 	//Create the the containers for the base trap class
-	UPROPERTY(EditAnywhere, Category = "Trap Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trap Properties")
 		bool isActive;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trap Properties")
+		bool wasSet;
 
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
 		float trapRadius;
@@ -34,8 +36,8 @@ public:
 	UFUNCTION()
 		void OnOverlap(AActor* OtherActor);
 
-		// Called when the game starts or when spawned
-		virtual void BeginPlay() override;
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
 	// Called every frame
 	virtual void Tick(float DeltaSeconds) override;

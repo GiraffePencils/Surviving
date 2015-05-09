@@ -11,7 +11,9 @@ ATrap::ATrap()
 	PrimaryActorTick.bCanEverTick = true;
 
 	//Set all the Default values
-	isActive = true;
+	isActive = false;
+
+	wasSet = false;
 
 	trapRadius = 40.0f;
 

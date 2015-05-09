@@ -43,9 +43,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Survival\InventoryManager.cpp" />
     <ClCompile Include="..\..\Source\Survival\Trap.cpp" />
-    <ClInclude Include="..\..\Source\Survival\InventoryManager.h" />
     <ClInclude Include="..\..\Source\Survival\Trap.h" />
     <None Include="..\..\Survival.uproject" />
     <None Include="..\..\Source\Survival.Target.cs" />
