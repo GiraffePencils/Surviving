@@ -32,6 +32,7 @@ ATrap::ATrap()
 
 	//Delegate declaration.
 	OnActorBeginOverlap.AddDynamic(this, &ATrap::OnOverlap);
+	OnActorEndOverlap.AddDynamic(this, &ATrap::OnOverlapEnd);
 }
 
 // Called when the game starts or when spawned.
@@ -52,6 +53,20 @@ void ATrap::Tick(float DeltaTime)
 void ATrap::OnOverlap(AActor* OtherActor)
 {
 	if (OtherActor)
-	isActive = false;
+	{
+		isActive = false;
+	}
+
+
+}
+
+void ATrap::OnOverlapEnd(AActor* OtherActor)
+{
+	if (!wasSet)
+	{
+		wasSet = true;
+		isActive = true;
+	}
+
 
 }

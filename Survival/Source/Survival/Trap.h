@@ -36,6 +36,10 @@ public:
 	UFUNCTION()
 		void OnOverlap(AActor* OtherActor);
 
+	//Function to be called on overlap End
+	UFUNCTION()
+		void OnOverlapEnd(AActor* OtherActor);
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
