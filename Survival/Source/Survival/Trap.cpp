@@ -17,7 +17,7 @@ ATrap::ATrap()
 
 	trapRadius = 40.0f;
 
-	trapState = 0;
+	trapState = 0.0f;
 
 	// Collision Sphere for our player interaction.
 	USphereComponent* SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
@@ -51,15 +51,15 @@ void ATrap::Tick(float DeltaTime)
 
 	if (isActive)
 	{
-		trapState = 0;
+		trapState = 0.0f;
 	}
 	else if (!wasSet)
 	{
-		trapState = 2;
+		trapState = 2.0f;
 	}
 	else 
 	{
-		trapState = 1;
+		trapState = 1.0f;
 	}
 
 }
