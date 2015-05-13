@@ -17,6 +17,8 @@ ATrap::ATrap()
 
 	trapRadius = 40.0f;
 
+	trapState = 0;
+
 	// Collision Sphere for our player interaction.
 	USphereComponent* SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("RootComponent"));
 	RootComponent = SphereComponent;
@@ -47,12 +49,25 @@ void ATrap::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (isActive)
+	{
+		trapState = 0;
+	}
+	else if (!wasSet)
+	{
+		trapState = 2;
+	}
+	else 
+	{
+		trapState = 1;
+	}
+
 }
 
 //Do something with the other actor.
 void ATrap::OnOverlap(AActor* OtherActor)
 {
-	if (OtherActor)
+	if (OtherActor && wasSet==true)
 	{
 		isActive = false;
 	}
@@ -62,11 +77,20 @@ void ATrap::OnOverlap(AActor* OtherActor)
 
 void ATrap::OnOverlapEnd(AActor* OtherActor)
 {
+	/*if (!wasSet)
+	{
+		wasSet = true;
+		isActive = true;
+	}
+	*/
+
+}
+
+void ATrap::SetTrap(AActor* OtherActor)
+{
 	if (!wasSet)
 	{
 		wasSet = true;
 		isActive = true;
 	}
-
-
 }

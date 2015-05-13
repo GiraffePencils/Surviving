@@ -17,6 +17,14 @@ class AActor;
 #define ATrap_RPC_WRAPPERS \
  \
  \
+	DECLARE_FUNCTION(execSetTrap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->SetTrap(OtherActor); \
+	} \
+ \
+ \
 	DECLARE_FUNCTION(execOnOverlapEnd) \
 	{ \
 		P_GET_OBJECT(AActor,OtherActor); \
@@ -36,6 +44,14 @@ class AActor;
 #define ATrap_RPC_WRAPPERS_NO_PURE_DECLS \
 	static inline void StaticChecks_Implementation_Validate() \
 	{ \
+	} \
+ \
+ \
+	DECLARE_FUNCTION(execSetTrap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->SetTrap(OtherActor); \
 	} \
  \
  \

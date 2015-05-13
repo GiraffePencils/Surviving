@@ -32,6 +32,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
 		float trapRadius;
 
+	UPROPERTY(EditAnywhere, Category = "Trap Properties")
+		uint32 trapState;
+
 	//Function to be called on overlap
 	UFUNCTION()
 		void OnOverlap(AActor* OtherActor);
@@ -39,6 +42,10 @@ public:
 	//Function to be called on overlap End
 	UFUNCTION()
 		void OnOverlapEnd(AActor* OtherActor);
+
+	//Function to Set the trap
+	UFUNCTION(BlueprintCallable, Category = "Trap Commands")
+		virtual void SetTrap(AActor* OtherActor);
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
