@@ -32,8 +32,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Trap Properties")
 		float trapRadius;
 
-	UPROPERTY(EditAnywhere, Category = "Trap Properties")
-		uint32 trapState;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trap Properties")
+		int32 trapState;
 
 	//Function to be called on overlap
 	UFUNCTION()
