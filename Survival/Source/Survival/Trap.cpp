@@ -67,11 +67,13 @@ void ATrap::Tick(float DeltaTime)
 //Do something with the other actor.
 void ATrap::OnOverlap(AActor* OtherActor)
 {
-	if (OtherActor && wasSet==true)
+	if (isActive)
 	{
-		isActive = false;
+		if (OtherActor && wasSet == true)
+		{
+			isActive = false;
+		}
 	}
-
 
 }
 
