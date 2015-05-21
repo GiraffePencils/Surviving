@@ -21,6 +21,9 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
+	UFUNCTION(BlueprintCallable, Category = "Place Item")
+		bool PlaceItem(uint8 storageID);
 		
+	
 	
 };

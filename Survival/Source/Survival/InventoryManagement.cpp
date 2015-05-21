@@ -34,3 +34,15 @@ void UInventoryManagement::TickComponent( float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
+bool UInventoryManagement::PlaceItem(uint8 storageID)
+{
+	if(storageID == 1)
+	{
+		return true;
+	}
+	else
+	{
+		return false; 
+	}
+}
+
