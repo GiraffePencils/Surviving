@@ -12,6 +12,8 @@ UInventoryManagement::UInventoryManagement()
 	bWantsInitializeComponent = true;
 	PrimaryComponentTick.bCanEverTick = true;
 
+	
+
 	// ...
 }
 
@@ -21,6 +23,14 @@ void UInventoryManagement::InitializeComponent()
 {
 	Super::InitializeComponent();
 
+	//inventory.Init(5);
+	for (uint8 i = 0; i < 5; i++)
+	{
+		inventory.Emplace(i);
+	}
+	inventory[2].AddItem();
+	inventory[2].AddItem();
+	inventory[2].AddItem();
 	// ...
 	
 }
@@ -36,7 +46,8 @@ void UInventoryManagement::TickComponent( float DeltaTime, ELevelTick TickType, 
 
 bool UInventoryManagement::PlaceItem(uint8 storageID)
 {
-	if(storageID == 1)
+	float item = inventory[storageID].TakeItem(1);
+	if( item != NULL)
 	{
 		return true;
 	}

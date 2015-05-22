@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "InventorySlot.h"
 #include "InventoryManagement.generated.h"
 
 
@@ -23,7 +24,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Place Item")
 		bool PlaceItem(uint8 storageID);
-		
-	
+
+	//UPROPERTY()
+	TArray<InventorySlot> inventory;
 	
 };
