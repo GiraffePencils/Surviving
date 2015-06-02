@@ -5,12 +5,12 @@
 
 InventorySlot::InventorySlot()
 {
-	storageID = 0.0f;
+	storageID = FVector2D(0,0);
 	itemID = 0.0f;
 	quantity = 0.0f;
 }
 
-InventorySlot::InventorySlot(float id)
+InventorySlot::InventorySlot(FVector2D id)
 {
 	storageID = id;
 	itemID = 0.0f;
@@ -21,12 +21,12 @@ InventorySlot::~InventorySlot()
 {
 }
 
-float InventorySlot::GetStorageID()
+FVector2D InventorySlot::GetStorageID()
 {
 	return storageID;
 }
 
-void InventorySlot::SetStorageID(float id)
+void InventorySlot::SetStorageID(FVector2D id)
 {
 	storageID = id;
 }

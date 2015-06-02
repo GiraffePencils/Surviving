@@ -23,7 +23,9 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Place Item")
-		bool PlaceItem(uint8 storageID);
+		bool PlaceItem(FVector2D vstorageID);
+
+	float GetArrayPoint(FVector2D gridPoint);
 
 	//UPROPERTY()
 	TArray<InventorySlot> inventory;

@@ -11,12 +11,12 @@ class SURVIVAL_API InventorySlot
 public:
 	InventorySlot();
 
-	InventorySlot(float id);
+	InventorySlot(FVector2D id);
 
 	~InventorySlot();
 
-	float GetStorageID();
-	void SetStorageID(float id);
+	FVector2D GetStorageID();
+	void SetStorageID(FVector2D id);
 
 	float GetItemID();
 	void SetItemID(float id);
@@ -28,7 +28,7 @@ public:
 
 private:
 	UPROPERTY()
-	float storageID;
+	FVector2D storageID;
 	UPROPERTY()
 	float itemID;
 	UPROPERTY()

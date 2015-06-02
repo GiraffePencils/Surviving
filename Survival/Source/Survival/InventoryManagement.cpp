@@ -24,13 +24,17 @@ void UInventoryManagement::InitializeComponent()
 	Super::InitializeComponent();
 
 	//inventory.Init(5);
-	for (uint8 i = 0; i < 5; i++)
+	for (float i = 0; i < 5; i++)
 	{
-		inventory.Emplace(i);
+		for (float j = 0; j < 10; j++)
+		{
+			FVector2D coord(i,j);
+			inventory.Emplace(coord);
+		}
 	}
-	inventory[2].AddItem();
-	inventory[2].AddItem();
-	inventory[2].AddItem();
+	inventory[3].AddItem();
+	inventory[3].AddItem();
+	inventory[3].AddItem();
 	// ...
 	
 }
@@ -44,16 +48,32 @@ void UInventoryManagement::TickComponent( float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
-bool UInventoryManagement::PlaceItem(uint8 storageID)
+float UInventoryManagement::GetArrayPoint(FVector2D gridPoint)
 {
-	float item = inventory[storageID].TakeItem(1);
-	if( item != NULL)
+	float result = 0;
+
+	result = ((gridPoint.Y)*10) + (gridPoint.X);
+
+	return result;
+}
+
+bool UInventoryManagement::PlaceItem(FVector2D vstorageID)
+{
+
+	float istorageID = GetArrayPoint(vstorageID);
+
+	if (istorageID > 0 && istorageID < 50)
 	{
-		return true;
+		float item = inventory[istorageID].TakeItem(1);
+		if (item != NULL)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
-	else
-	{
-		return false; 
-	}
+	return false;
 }
 
